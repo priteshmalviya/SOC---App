@@ -1,0 +1,2040 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Activity.UpdateProfileActivity">
+
+    <View
+        android:id="@+id/ActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/primary"
+        android:background="@drawable/sqr_border" />
+
+
+
+    <ImageView
+        android:id="@+id/UserProfile"
+        android:layout_width="75dp"
+        android:layout_height="0dp"
+        android:src="@drawable/default_image"
+        app:layout_constraintStart_toStartOf="@id/ActionBar"
+        app:layout_constraintTop_toTopOf="@id/ActionBar"
+        app:layout_constraintBottom_toBottomOf="@id/ActionBar"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Profile"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintTop_toTopOf="@+id/ActionBar"
+        app:layout_constraintBottom_toBottomOf="@+id/ActionBar"
+        app:layout_constraintEnd_toEndOf="@+id/ActionBar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/HomeIcon"
+        android:layout_width="75dp"
+        android:layout_height="0dp"
+        android:src="@drawable/home_icon_24"
+        app:layout_constraintEnd_toEndOf="@id/ActionBar"
+        app:layout_constraintTop_toTopOf="@id/ActionBar"
+        app:layout_constraintBottom_toBottomOf="@id/ActionBar"
+        android:layout_margin="5dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LodingPage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:elevation="20dp"
+        android:clickable="false"
+        android:background="#4D000000"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Uploading Your Data Please Wait..."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar2"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            android:layout_marginTop="20dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/ActionBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:padding="10dp"
+                android:text="Are You Interested For Campus Placement For Ips Academy ? *"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+
+            <RadioGroup
+                android:id="@+id/RadioGroupForCampus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="15dp">
+
+
+                <RadioButton
+                    android:id="@+id/radioButton1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="No" />
+
+            </RadioGroup>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Full Name Of Student (As Per Marksheet) *"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="Full Name Of Student (As Per Marksheet) *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="textCapWords"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Enrollment Number *"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/EnrollMent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:hint="Enrollment Number *"
+                android:inputType="textCapWords"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:padding="10dp"
+                android:text="Course * "
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/RadioGroupForCourse"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="15dp">
+
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForCourseMca"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="MCA" />
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForCourseImca"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="IMCA" />
+
+            </RadioGroup>
+
+
+
+            <!--
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Current Semester. *"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/CurrentSemester"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 2022"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:maxLength="4"
+                android:padding="10dp" />
+
+            Create a TextInputLayout and choose the style,
+        for now we are choosing the OutlinedBox ExposedDropdownMenu   -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:hint="ex. IV"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black">
+
+                <!-- Inside text input layout add
+                      an auto complete text view
+                        and make its input type to none-->
+                <AutoCompleteTextView
+                    android:id="@+id/CurrentSemester"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:inputType="none"
+                    android:text="Select Current Semester *"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Year Of Admission. *"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/YearOfAddmision"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 2022"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:maxLength="4"
+                android:padding="10dp" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Year Of Passing. *"
+                android:padding="10dp" />
+            <EditText
+                android:id="@+id/YearOfPassing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 2024"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:maxLength="4"
+                android:inputType="number"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Date Of Birth (DD/MM/YYYY) *"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/DateOfBirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 25/02/2000"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="date"
+                android:maxLength="10"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:padding="10dp"
+                android:text="Gender * "
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+
+            <RadioGroup
+                android:id="@+id/RadioGroupForGender"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="15dp">
+
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForGenderFemale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Female" />
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForGenderMale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Male" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:text="Category * "
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+
+            <RadioGroup
+                android:id="@+id/RadioGroupForCategory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="15dp">
+
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForCategoryGeneral"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="General" />
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForCategoryEWS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="EWS" />
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForCategoryOBC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="OBC" />
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForCategoryST"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="ST" />
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForCategorySC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="SC" />
+
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForCategoryOther"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Other" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:text="Specially Abled Or Handicapped * "
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+
+            <RadioGroup
+                android:id="@+id/RadioGroupForHandicapped"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="15dp">
+
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForHandicappedYes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForHandicappedNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="No" />
+
+            </RadioGroup>
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="SSC (10th) School Name *"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/sscSchoolName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="SSC (10th) School Name *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="textCapWords"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="SSC (10th) Board Name *"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/sscBoardName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="SSC (10th) Board Name *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="textCapWords"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="SSC (10th)% *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/sscPercentage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:hint="ex. 80"
+                android:inputType="numberDecimal"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="SSC (10th) Year Of Passing *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/sscYearOfPassing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 2017"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:maxLength="4"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="HSSC (12th) School Name *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/hsscSchoolName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="HSSC (12th) School Name *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="textCapWords"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="HSSC (12th) Board Name *"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/hsscBoardName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="HSSC (12th) Board Name *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="textCapWords"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="HSSC (12th)% *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/hsscPercentage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 80"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="HSSC (12th) Year Of Passing *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/hsscYearOfPassing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 2019"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:maxLength="4"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:id="@+id/CgpaInUGtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Aggregate UG - CGPA (Upto Last Semester) *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/CgpaInUG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 8.0"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:id="@+id/PercentageInUGtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Aggregate UG - Percentage (Upto Last Semester) *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/PercentageInUG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 80"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:id="@+id/CgpaInPGtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Aggregate PG - CGPA (Upto Last Semester) *"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+            <EditText
+                android:id="@+id/CgpaInPG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 8"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                android:visibility="gone"/>
+
+
+            <TextView
+                android:id="@+id/PercentageInPGtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Aggregate PG - Percentage (Upto Last Semester) *"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+            <EditText
+                android:id="@+id/PercentageInPG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 80"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                android:visibility="gone"/>
+
+
+            <TextView
+                android:id="@+id/UGCoursetxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="UG Course For PG Student *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/UGCourse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. B.sc"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="textCapWords"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:id="@+id/UGCourseSpecializationtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="UG Course Specialization *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/UGCourseSpecialization"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. Computer Science"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="textCapWords"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:id="@+id/UGPassingYeartxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="UG Year Of Passing *"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/UGPassingYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 2022"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:maxLength="4"
+                android:padding="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:text="Any Active Backlog? *"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+
+
+            <RadioGroup
+                android:id="@+id/RadioGroupForBacklog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="15dp">
+
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForBacklogYes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForBacklogNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="No" />
+
+            </RadioGroup>
+
+
+
+
+            <TextView
+                android:id="@+id/NumberOfActiveBacklogtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Total Numbers Of Active Backlog *"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/NumberOfActiveBacklog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 0"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:text="Any Backlog History? *"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+
+            <RadioGroup
+                android:id="@+id/RadioGroupForBacklogHistory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="15dp">
+
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForBacklogHistoryYes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForBacklogHistoryNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="No" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:text="Diploma In Any Course? *"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+
+            <RadioGroup
+                android:id="@+id/RadioGroupForDiploma"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="15dp">
+
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForDiplomaYes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForDiplomaNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="No" />
+
+            </RadioGroup>
+
+
+
+
+            <TextView
+                android:id="@+id/NameInDiplomatxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Course Name Of Diploma *"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/NameInDiploma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="Course Name Of Diploma *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="textCapWords"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+
+
+            <TextView
+                android:id="@+id/AddmisionYearInDiplomatxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Diploma Admission Year *"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/AddmisionYearInDiploma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="Diploma Admission Year *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:maxLength="4"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+
+
+            <TextView
+                android:id="@+id/PassoutInDiplomatxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Diploma Passout Year *"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/PassoutInDiploma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="Diploma Passout Year *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:maxLength="4"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+
+            <TextView
+                android:id="@+id/PercentageInDiplomatxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Percentage In Diploma *"
+                android:padding="10dp"
+                android:visibility="gone"  />
+
+            <EditText
+                android:id="@+id/PercentageInDiploma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="Percentage In Diploma *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+
+
+            <TextView
+                android:id="@+id/DiplomaInstitutetxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Diploma Institute Name *"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/DiplomaInstitute"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="Diploma Institute Name *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="textCapWords"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+
+
+            <TextView
+                android:id="@+id/MobileNumbertxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Mobile Number *"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/MobileNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="Mobile Number *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:maxLength="10"
+                android:inputType="number"
+                android:padding="10dp" />
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Alternate Mobile Number *"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/AltenateMobileNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="Alternate Mobile Number *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:maxLength="10"
+                android:inputType="number"
+                android:padding="10dp" />
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Email ID *"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/EmailID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:inputType="textEmailAddress|textCapWords"
+                android:hint="Email ID *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:padding="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:text="Any Gap In Studies? *"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+
+            <RadioGroup
+                android:id="@+id/RadioGroupForGap"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="15dp">
+
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForGapYes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/RadioGroupForGapNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="No" />
+
+            </RadioGroup>
+
+
+
+
+            <TextView
+                android:id="@+id/NumbersGaptxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Number Of Gap Years *"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/NumbersGap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 1"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+
+
+            <TextView
+                android:id="@+id/semester1Sgpatxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="I Semester SGPA *"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/semester1Sgpa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 8.5"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:padding="10dp" />
+
+
+
+
+
+            <TextView
+                android:id="@+id/semester1ATKTtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="I Semester ATKT Status (Number Of ATKT Subject)"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/semester1ATKT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 0"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:id="@+id/semester2Sgpatxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="II Semester SGPA *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/semester2Sgpa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 8.5"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:padding="10dp" />
+
+
+
+
+            <TextView
+                android:id="@+id/semester2ATKTtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="II Semester ATKT Status (Number Of ATKT Subject)"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/semester2ATKT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 0"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:padding="10dp" />
+
+
+
+
+            <TextView
+                android:id="@+id/semester3Sgpatxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="III Semester SGPA *"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/semester3Sgpa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 8.5"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+
+
+
+            <TextView
+                android:id="@+id/semester3ATKTtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="III Semester ATKT Status (Number Of ATKT Subject)"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/semester3ATKT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 0"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+
+
+
+            <TextView
+                android:id="@+id/semester4Sgpatxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="IV Semester SGPA *"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/semester4Sgpa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 8.5"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+
+            <TextView
+                android:id="@+id/semester4ATKTtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="IV Semester ATKT Status (Number Of ATKT Subject)"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+
+
+            <EditText
+                android:id="@+id/semester4ATKT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 0"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+
+            <TextView
+                android:id="@+id/semester5Sgpatxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="V Semester SGPA *"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+            <EditText
+                android:id="@+id/semester5Sgpa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 8.5"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+
+            <TextView
+                android:id="@+id/semester5ATKTtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="V Semester ATKT Status (Number Of ATKT Subject)"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+            <EditText
+                android:id="@+id/semester5ATKT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 0"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+
+            <TextView
+                android:id="@+id/semester6Sgpatxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="VI Semester SGPA *"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+            <EditText
+                android:id="@+id/semester6Sgpa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 8.5"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+
+            <TextView
+                android:id="@+id/semester6ATKTtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="VI Semester ATKT Status (Number Of ATKT Subject)"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+            <EditText
+                android:id="@+id/semester6ATKT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 0"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+
+            <TextView
+                android:id="@+id/semester7Sgpatxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="VII Semester SGPA *"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+            <EditText
+                android:id="@+id/semester7Sgpa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 8.5"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+
+            <TextView
+                android:id="@+id/semester7ATKTtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="VII Semester ATKT Status (Number Of ATKT Subject)"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+            <EditText
+                android:id="@+id/semester7ATKT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 0"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+
+            <TextView
+                android:id="@+id/semester8Sgpatxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="VIII Semester SGPA *"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+            <EditText
+                android:id="@+id/semester8Sgpa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 8.5"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:id="@+id/semester8ATKTtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="VIII Semester ATKT Status (Number Of ATKT Subject)"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+            <EditText
+                android:id="@+id/semester8ATKT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 0"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Local Address *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/LocalAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:hint="Local Address *"
+                android:inputType="textCapWords"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Pincode Of Local Address *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/LocalAddressPincode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="Pincode Of Local Address *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:maxLength="6"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Permanent Address *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/permanentAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="Permanent Address *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="textCapWords"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Home Town Of Permanent Address *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/permanentAddressHomeTown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="Home Town Of Permanent Address *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="textCapWords"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="State Of Permanent Address *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/permanentAddressState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. Madhya Pradesh"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="textCapWords"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Pincode Of Permanent Address *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/permanentAddressPincode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="Pincode Of Permanent Address *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:maxLength="6"
+                android:padding="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Father's Name *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/FatherName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="Father's Name *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="textCapWords"
+                android:padding="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Father's Contact Number *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/FatherContect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="Father's Contact Number *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:maxLength="10"
+                android:padding="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Father's Occupation *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/FatherOccupation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="Father's Occupation *"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="textCapWords"
+                android:padding="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Mother's Name *"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/MotherName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="Mother's Name"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="textCapWords"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Mother's Contact Number *"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/MotherContect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. 9999999999"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:maxLength="10"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:textSize="18sp"
+                android:text="Any Internship (Company Name)"
+                android:padding="10dp" />
+
+
+            <EditText
+                android:id="@+id/InternShip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/border"
+                android:hint="ex. TCS"
+                android:textColorHint="#7f000000"
+                android:textColor="@color/black"
+                android:inputType="textCapWords"
+                android:padding="10dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:text="Select Passport Size Photo (Formal In White Background) *"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/Image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="15dp"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/default_image" />
+
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:textColor="@color/black"
+                android:text="This is to Certify that the Information filled is true to my knowledge. If any information is found to be untrue. I shall bear ther aftermath situation and disciplinary action resulting there in." />
+
+            <Button
+                android:id="@+id/SubmitBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@drawable/border"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:text="Submit"
+                android:enabled="false" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

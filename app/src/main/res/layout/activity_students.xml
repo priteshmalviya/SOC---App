@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activity.StudentsActivity">
+
+    <View
+        android:id="@+id/ActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/primary"
+        android:background="@drawable/sqr_border" />
+
+
+
+    <ImageView
+        android:id="@+id/UserProfile"
+        android:layout_width="75dp"
+        android:layout_height="0dp"
+        android:src="@drawable/default_image"
+        app:layout_constraintStart_toStartOf="@id/ActionBar"
+        app:layout_constraintTop_toTopOf="@id/ActionBar"
+        app:layout_constraintBottom_toBottomOf="@id/ActionBar"
+        android:layout_margin="5dp"/>
+
+
+    <EditText
+        android:id="@+id/SearchBox"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/border"
+        android:backgroundTint="@color/white"
+        android:hint="Search Student"
+        android:textColorHint="#7f000000"
+        android:textColor="@color/black"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ActionBar"
+        app:layout_constraintEnd_toStartOf="@+id/HomeIcon"
+        app:layout_constraintStart_toEndOf="@id/UserProfile"
+        app:layout_constraintTop_toTopOf="@+id/ActionBar" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/search_icon_24"
+        app:layout_constraintEnd_toEndOf="@+id/SearchBox"
+        app:layout_constraintTop_toTopOf="@id/SearchBox"
+        app:layout_constraintBottom_toBottomOf="@id/SearchBox" />
+
+
+    <ImageView
+        android:id="@+id/HomeIcon"
+        android:layout_width="75dp"
+        android:layout_height="0dp"
+        android:src="@drawable/home_icon_24"
+        app:layout_constraintEnd_toEndOf="@id/ActionBar"
+        app:layout_constraintTop_toTopOf="@id/ActionBar"
+        app:layout_constraintBottom_toBottomOf="@id/ActionBar"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/TotalStudents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Students : 0"
+        android:textColor="@color/black"
+        android:layout_margin="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ActionBar"/>
+
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Throughout"
+        android:layout_margin="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/ActionBar"
+        android:backgroundTint="#7f000000"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/DownloadExelebtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TotalStudents" />
+
+    <ImageView
+        android:id="@+id/NoResult"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/no_result_found"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/DownloadExelebtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Download Excel"
+        android:layout_margin="10dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
