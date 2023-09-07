@@ -57,7 +57,8 @@ class AddNewVideo : AppCompatActivity() {
             val name=findViewById<EditText>(R.id.Name).text.toString()
             val post=findViewById<EditText>(R.id.Post).text.toString()
             val id=findViewById<EditText>(R.id.facultID).text.toString()
-            if(id=="" || name == ""){
+            val category=findViewById<EditText>(R.id.Category).text.toString()
+            if(id=="" || name == "" || category==""){
                 Toast.makeText(this, "Please Fill All Required Fields * ", Toast.LENGTH_SHORT).show()
             }else {
                 findViewById<View>(R.id.LodingPage).isVisible = true
@@ -66,10 +67,10 @@ class AddNewVideo : AppCompatActivity() {
                     WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
                 )
                 if (Imagepath.toString() != "hello") {
-                    VideoData = Video(name, post,"" ,id)
+                    VideoData = Video(name, post,"" ,id,category)
                     sendImagetoStorage()
                 } else {
-                    VideoData = Video(name, post, VideoData.image,id)
+                    VideoData = Video(name, post, VideoData.image,id,category)
                     AddFacultyData()
                 }
             }
@@ -120,7 +121,8 @@ class AddNewVideo : AppCompatActivity() {
     }
 
     private fun AddFacultyData() {
-        mDbRef.child("Videos").child(VideoData.title).setValue(VideoData)
+        val path = VideoData.url.substring(VideoData.url.indexOf('.'))
+        mDbRef.child("Videos").child(path).setValue(VideoData)
         Toast.makeText(this, "Video Added", Toast.LENGTH_SHORT).show()
         val intent = Intent(this, PlacmentVideo::class.java)
         intent.putExtra("UserName",Username)

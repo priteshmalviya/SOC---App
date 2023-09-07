@@ -39,6 +39,16 @@
         android:layout_margin="5dp"
         android:visibility="gone"/>
 
+    <ImageView
+        android:id="@+id/LogoutIcon"
+        android:layout_width="75dp"
+        android:layout_height="0dp"
+        android:src="@drawable/logout_icon_24"
+        app:layout_constraintEnd_toEndOf="@id/ActionBar"
+        app:layout_constraintTop_toTopOf="@id/ActionBar"
+        app:layout_constraintBottom_toBottomOf="@id/ActionBar"
+        android:layout_margin="5dp"/>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -138,5 +148,204 @@
         android:background="@drawable/border"
         android:backgroundTint="@color/black"
         android:textColor="@color/white"/>
+
+
+
+    <Button
+        android:id="@+id/Company"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PlayVideo"
+        android:layout_margin="15dp"
+        android:text="Companies For Placements"
+        android:background="@drawable/border"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"/>
+
+
+    <Button
+        android:id="@+id/Placments"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Company"
+        android:layout_margin="15dp"
+        android:text="Placements"
+        android:background="@drawable/border"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"/>
+
+
+    <Button
+        android:id="@+id/syllabus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Placments"
+        android:layout_margin="15dp"
+        android:text="Syllabus"
+        android:background="@drawable/border"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutforsyllabus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/border"
+        android:paddingVertical="25dp"
+        android:backgroundTint="@color/window"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="20dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/headingforsyllabus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Course"
+            android:layout_margin="10dp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/closetextforsyllabus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:layout_marginRight="15dp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <Button
+            android:id="@+id/btnmca"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headingforsyllabus"
+            android:layout_margin="10dp"
+            android:text="MCA"
+            android:textColor="@color/white"
+            />
+
+
+        <Button
+            android:id="@+id/btnimca"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnmca"
+            android:layout_margin="10dp"
+            android:text="IMCA"
+            android:textColor="@color/white"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutforyear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/border"
+        android:paddingVertical="25dp"
+        android:backgroundTint="@color/window"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="20dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Year"
+            android:layout_margin="10dp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/closetext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:layout_marginRight="15dp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <Button
+            android:id="@+id/btn2023"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/heading"
+            android:layout_margin="10dp"
+            android:text="2023"
+            android:textColor="@color/white"
+            />
+
+
+        <Button
+            android:id="@+id/btn2022"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn2023"
+            android:layout_margin="10dp"
+            android:text="2022"
+            android:textColor="@color/white"
+            />
+
+
+
+        <Button
+            android:id="@+id/btnall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn2022"
+            android:layout_margin="10dp"
+            android:text="All"
+            android:textColor="@color/white"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

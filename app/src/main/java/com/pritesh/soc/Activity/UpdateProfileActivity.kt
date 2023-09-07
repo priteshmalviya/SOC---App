@@ -6,7 +6,6 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.*
@@ -128,9 +127,12 @@ class UpdateProfileActivity : AppCompatActivity() {
     lateinit var ckeck : CheckBox
 
     var item = ArrayList<String>()
+    var componentsId = ArrayList<Int>()
     lateinit var Currentsemester : AutoCompleteTextView
     lateinit var adapteritem : ArrayAdapter<String>
     var currentsemposition = 0
+
+    var dataexist = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -152,323 +154,68 @@ class UpdateProfileActivity : AppCompatActivity() {
         item.add("VIII")
         item.add("PassOut")
 
+
+        componentsId.add(R.id.semester1Sgpatxt)
+        componentsId.add(R.id.semester1Sgpa)
+        componentsId.add(R.id.semester1ATKTtxt)
+        componentsId.add(R.id.semester1ATKT)
+        componentsId.add(R.id.semester2Sgpatxt)
+        componentsId.add(R.id.semester2Sgpa)
+        componentsId.add(R.id.semester2ATKTtxt)
+        componentsId.add(R.id.semester2ATKT)
+        componentsId.add(R.id.semester3Sgpatxt)
+        componentsId.add(R.id.semester3Sgpa)
+        componentsId.add(R.id.semester3ATKTtxt)
+        componentsId.add(R.id.semester3ATKT)
+        componentsId.add(R.id.semester4Sgpatxt)
+        componentsId.add(R.id.semester4Sgpa)
+        componentsId.add(R.id.semester4ATKTtxt)
+        componentsId.add(R.id.semester4ATKT)
+        componentsId.add(R.id.semester5Sgpatxt)
+        componentsId.add(R.id.semester5Sgpa)
+        componentsId.add(R.id.semester5ATKTtxt)
+        componentsId.add(R.id.semester5ATKT)
+        componentsId.add(R.id.semester6Sgpatxt)
+        componentsId.add(R.id.semester6Sgpa)
+        componentsId.add(R.id.semester6ATKTtxt)
+        componentsId.add(R.id.semester6ATKT)
+        componentsId.add(R.id.semester7Sgpatxt)
+        componentsId.add(R.id.semester7Sgpa)
+        componentsId.add(R.id.semester7ATKTtxt)
+        componentsId.add(R.id.semester7ATKT)
+        componentsId.add(R.id.semester8Sgpatxt)
+        componentsId.add(R.id.semester8Sgpa)
+        componentsId.add(R.id.semester8ATKTtxt)
+        componentsId.add(R.id.semester8ATKT)
+
+
         Currentsemester = findViewById(R.id.CurrentSemester)
 
         adapteritem = ArrayAdapter<String>(this,R.layout.list_item,item)
 
         Currentsemester.setAdapter(adapteritem)
 
-        Currentsemester.setOnItemClickListener(AdapterView.OnItemClickListener { parent, view, position, id ->
+        Currentsemester.setOnItemClickListener({ parent, view, position, id ->
 
             //Toast.makeText(this, position.toString(), Toast.LENGTH_SHORT).show()
             currentsemposition = position
-            when (position) {
-                0 -> {
-                    sem1cgpa.isVisible = false
-                    sem1Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester1ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester1Sgpatxt).isVisible = false
-                    sem2cgpa.isVisible = false
-                    sem2Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester2ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester2Sgpatxt).isVisible = false
-                    sem3cgpa.isVisible = false
-                    sem3Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester3ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester3Sgpatxt).isVisible = false
-                    sem4cgpa.isVisible = false
-                    sem4Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester4ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester4Sgpatxt).isVisible = false
-                    sem5cgpa.isVisible = false
-                    sem5Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester5ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester5Sgpatxt).isVisible = false
-                    sem6cgpa.isVisible = false
-                    sem6Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester6ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester6Sgpatxt).isVisible = false
-                    sem7cgpa.isVisible = false
-                    sem7Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester7ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester7Sgpatxt).isVisible = false
-                    sem8cgpa.isVisible = false
-                    sem8Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester8ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester8Sgpatxt).isVisible = false
-                }
-                1 -> {
-                    sem1cgpa.isVisible = true
-                    sem1Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester1ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester1Sgpatxt).isVisible = true
-                    sem2cgpa.isVisible = false
-                    sem2Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester2ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester2Sgpatxt).isVisible = false
-                    sem3cgpa.isVisible = false
-                    sem3Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester3ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester3Sgpatxt).isVisible = false
-                    sem4cgpa.isVisible = false
-                    sem4Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester4ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester4Sgpatxt).isVisible = false
-                    sem5cgpa.isVisible = false
-                    sem5Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester5ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester5Sgpatxt).isVisible = false
-                    sem6cgpa.isVisible = false
-                    sem6Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester6ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester6Sgpatxt).isVisible = false
-                    sem7cgpa.isVisible = false
-                    sem7Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester7ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester7Sgpatxt).isVisible = false
-                    sem8cgpa.isVisible = false
-                    sem8Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester8ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester8Sgpatxt).isVisible = false
-                }
-                2 -> {
-                    sem1cgpa.isVisible = true
-                    sem1Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester1ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester1Sgpatxt).isVisible = true
-                    sem2cgpa.isVisible = true
-                    sem2Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester2ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester2Sgpatxt).isVisible = true
-                    sem3cgpa.isVisible = false
-                    sem3Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester3ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester3Sgpatxt).isVisible = false
-                    sem4cgpa.isVisible = false
-                    sem4Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester4ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester4Sgpatxt).isVisible = false
-                    sem5cgpa.isVisible = false
-                    sem5Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester5ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester5Sgpatxt).isVisible = false
-                    sem6cgpa.isVisible = false
-                    sem6Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester6ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester6Sgpatxt).isVisible = false
-                    sem7cgpa.isVisible = false
-                    sem7Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester7ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester7Sgpatxt).isVisible = false
-                    sem8cgpa.isVisible = false
-                    sem8Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester8ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester8Sgpatxt).isVisible = false
-                }
-                3 -> {
-                    sem1cgpa.isVisible = true
-                    sem1Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester1ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester1Sgpatxt).isVisible = true
-                    sem2cgpa.isVisible = true
-                    sem2Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester2ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester2Sgpatxt).isVisible = true
-                    sem3cgpa.isVisible = true
-                    sem3Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester3ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester3Sgpatxt).isVisible = true
-                    sem4cgpa.isVisible = false
-                    sem4Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester4ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester4Sgpatxt).isVisible = false
-                    sem5cgpa.isVisible = false
-                    sem5Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester5ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester5Sgpatxt).isVisible = false
-                    sem6cgpa.isVisible = false
-                    sem6Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester6ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester6Sgpatxt).isVisible = false
-                    sem7cgpa.isVisible = false
-                    sem7Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester7ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester7Sgpatxt).isVisible = false
-                    sem8cgpa.isVisible = false
-                    sem8Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester8ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester8Sgpatxt).isVisible = false
-                }
-                4 -> {
-                    sem1cgpa.isVisible = true
-                    sem1Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester1ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester1Sgpatxt).isVisible = true
-                    sem2cgpa.isVisible = true
-                    sem2Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester2ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester2Sgpatxt).isVisible = true
-                    sem3cgpa.isVisible = true
-                    sem3Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester3ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester3Sgpatxt).isVisible = true
-                    sem4cgpa.isVisible = true
-                    sem4Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester4ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester4Sgpatxt).isVisible = true
-                    sem5cgpa.isVisible = false
-                    sem5Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester5ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester5Sgpatxt).isVisible = false
-                    sem6cgpa.isVisible = false
-                    sem6Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester6ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester6Sgpatxt).isVisible = false
-                    sem7cgpa.isVisible = false
-                    sem7Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester7ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester7Sgpatxt).isVisible = false
-                    sem8cgpa.isVisible = false
-                    sem8Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester8ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester8Sgpatxt).isVisible = false
-                }
-                5 -> {
-                    sem1cgpa.isVisible = true
-                    sem1Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester1ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester1Sgpatxt).isVisible = true
-                    sem2cgpa.isVisible = true
-                    sem2Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester2ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester2Sgpatxt).isVisible = true
-                    sem3cgpa.isVisible = true
-                    sem3Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester3ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester3Sgpatxt).isVisible = true
-                    sem4cgpa.isVisible = true
-                    sem4Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester4ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester4Sgpatxt).isVisible = true
-                    sem5cgpa.isVisible = true
-                    sem5Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester5ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester5Sgpatxt).isVisible = true
-                    sem6cgpa.isVisible = false
-                    sem6Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester6ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester6Sgpatxt).isVisible = false
-                    sem7cgpa.isVisible = false
-                    sem7Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester7ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester7Sgpatxt).isVisible = false
-                    sem8cgpa.isVisible = false
-                    sem8Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester8ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester8Sgpatxt).isVisible = false
-                }
-                6 -> {
-                    sem1cgpa.isVisible = true
-                    sem1Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester1ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester1Sgpatxt).isVisible = true
-                    sem2cgpa.isVisible = true
-                    sem2Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester2ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester2Sgpatxt).isVisible = true
-                    sem3cgpa.isVisible = true
-                    sem3Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester3ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester3Sgpatxt).isVisible = true
-                    sem4cgpa.isVisible = true
-                    sem4Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester4ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester4Sgpatxt).isVisible = true
-                    sem5cgpa.isVisible = true
-                    sem5Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester5ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester5Sgpatxt).isVisible = true
-                    sem6cgpa.isVisible = true
-                    sem6Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester6ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester6Sgpatxt).isVisible = true
-                    sem7cgpa.isVisible = false
-                    sem7Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester7ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester7Sgpatxt).isVisible = false
-                    sem8cgpa.isVisible = false
-                    sem8Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester8ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester8Sgpatxt).isVisible = false
-                }
-                7 -> {
-                    sem1cgpa.isVisible = true
-                    sem1Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester1ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester1Sgpatxt).isVisible = true
-                    sem2cgpa.isVisible = true
-                    sem2Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester2ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester2Sgpatxt).isVisible = true
-                    sem3cgpa.isVisible = true
-                    sem3Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester3ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester3Sgpatxt).isVisible = true
-                    sem4cgpa.isVisible = true
-                    sem4Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester4ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester4Sgpatxt).isVisible = true
-                    sem5cgpa.isVisible = true
-                    sem5Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester5ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester5Sgpatxt).isVisible = true
-                    sem6cgpa.isVisible = true
-                    sem6Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester6ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester6Sgpatxt).isVisible = true
-                    sem7cgpa.isVisible = true
-                    sem7Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester7ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester7Sgpatxt).isVisible = true
-                    sem8cgpa.isVisible = false
-                    sem8Atkt.isVisible = false
-                    findViewById<TextView>(R.id.semester8ATKTtxt).isVisible = false
-                    findViewById<TextView>(R.id.semester8Sgpatxt).isVisible = false
-                }
-                8 -> {
-                    sem1cgpa.isVisible = true
-                    sem1Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester1ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester1Sgpatxt).isVisible = true
-                    sem2cgpa.isVisible = true
-                    sem2Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester2ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester2Sgpatxt).isVisible = true
-                    sem3cgpa.isVisible = true
-                    sem3Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester3ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester3Sgpatxt).isVisible = true
-                    sem4cgpa.isVisible = true
-                    sem4Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester4ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester4Sgpatxt).isVisible = true
-                    sem5cgpa.isVisible = true
-                    sem5Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester5ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester5Sgpatxt).isVisible = true
-                    sem6cgpa.isVisible = true
-                    sem6Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester6ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester6Sgpatxt).isVisible = true
-                    sem7cgpa.isVisible = true
-                    sem7Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester7ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester7Sgpatxt).isVisible = true
-                    sem8cgpa.isVisible = true
-                    sem8Atkt.isVisible = true
-                    findViewById<TextView>(R.id.semester8ATKTtxt).isVisible = true
-                    findViewById<TextView>(R.id.semester8Sgpatxt).isVisible = true
-                }
+
+            var j=0
+
+            for(i in 0..position-1){
+                findViewById<TextView>(componentsId[j]).isVisible=true
+                findViewById<EditText>(componentsId[1+j]).isVisible=true
+                findViewById<TextView>(componentsId[2+j]).isVisible=true
+                findViewById<EditText>(componentsId[3+j]).isVisible=true
+                j+=4
+            }
+
+            for (i in position..7){
+                findViewById<TextView>(componentsId[j]).isVisible=false
+                findViewById<EditText>(componentsId[1+j]).isVisible=false
+                findViewById<TextView>(componentsId[2+j]).isVisible=false
+                findViewById<EditText>(componentsId[3+j]).isVisible=false
+                j+=4
             }
         })
 
@@ -621,42 +368,6 @@ class UpdateProfileActivity : AppCompatActivity() {
         var backloghf = false
 
 
-
-        /*Log.d("get id",R.id.semester1ATKT.toString())
-        Log.d("get id",R.id.semester1ATKTtxt.toString())
-        Log.d("get id",R.id.semester1Sgpa.toString())
-        Log.d("get id",R.id.semester1Sgpatxt.toString())
-        Log.d("get id",R.id.semester2ATKT.toString())
-        Log.d("get id",R.id.semester2ATKTtxt.toString())
-        Log.d("get id",R.id.semester2Sgpa.toString())
-        Log.d("get id",R.id.semester2Sgpatxt.toString())
-        Log.d("get id",R.id.semester3ATKT.toString())
-        Log.d("get id",R.id.semester3ATKTtxt.toString())
-        Log.d("get id",R.id.semester3Sgpa.toString())
-        Log.d("get id",R.id.semester3Sgpatxt.toString())
-        Log.d("get id",R.id.semester4ATKT.toString())
-        Log.d("get id",R.id.semester4ATKTtxt.toString())
-        Log.d("get id",R.id.semester4Sgpa.toString())
-        Log.d("get id",R.id.semester4Sgpatxt.toString())
-        Log.d("get id",R.id.semester5ATKT.toString())
-        Log.d("get id",R.id.semester5ATKTtxt.toString())
-        Log.d("get id",R.id.semester5Sgpa.toString())
-        Log.d("get id",R.id.semester5Sgpatxt.toString())
-        Log.d("get id",R.id.semester6ATKT.toString())
-        Log.d("get id",R.id.semester6ATKTtxt.toString())
-        Log.d("get id",R.id.semester6Sgpa.toString())
-        Log.d("get id",R.id.semester6Sgpatxt.toString())
-        Log.d("get id",R.id.semester7ATKT.toString())
-        Log.d("get id",R.id.semester7ATKTtxt.toString())
-        Log.d("get id",R.id.semester7Sgpa.toString())
-        Log.d("get id",R.id.semester7Sgpatxt.toString())
-        Log.d("get id",R.id.semester8ATKT.toString())
-        Log.d("get id",R.id.semester8ATKTtxt.toString())
-        Log.d("get id",R.id.semester8Sgpa.toString())
-        Log.d("get id",R.id.semester8Sgpatxt.toString())*/
-
-
-
         //ImageView
         Image=findViewById(R.id.Image)
 
@@ -667,6 +378,7 @@ class UpdateProfileActivity : AppCompatActivity() {
         mDbRef.child("StudentData").child(Username.substring(0,Username.indexOf('.')).lowercase()).get().addOnSuccessListener {
             if (it.value!=null){
                 StudentData=it.getValue(StudentForm::class.java)!!
+                dataexist = true
                 UpdateForm()
             }
         }.addOnFailureListener{
@@ -708,6 +420,26 @@ class UpdateProfileActivity : AppCompatActivity() {
         Course.setOnCheckedChangeListener { group, checkedId ->
             Coursef=true
             UpdateCourseUi(Mca.isChecked)
+
+            if(Mca.isChecked){
+                item.clear()
+                item.add("I")
+                item.add("II")
+                item.add("III")
+                item.add("IV")
+                item.add("PassOut")
+            }else{
+                item.clear()
+                item.add("I")
+                item.add("II")
+                item.add("III")
+                item.add("IV")
+                item.add("V")
+                item.add("VI")
+                item.add("VII")
+                item.add("VIII")
+                item.add("PassOut")
+            }
         }
 
         Diploma.setOnCheckedChangeListener { group, checkedId ->
@@ -740,9 +472,10 @@ class UpdateProfileActivity : AppCompatActivity() {
             "Other"-> findViewById<RadioButton>(R.id.RadioGroupForCategoryOther).isChecked=true
         }
 
+
         if (StudentData.currentsem!=""){
             currentsemposition = StudentData.currentsem.toInt()
-
+            Currentsemester.setText(item[currentsemposition])
             when (currentsemposition) {
                 0 -> {
                     sem1cgpa.isVisible = false
@@ -1197,7 +930,7 @@ class UpdateProfileActivity : AppCompatActivity() {
 
     private fun checkData() {
         if(StudentData.name=="" || StudentData.enrollNo=="" || StudentData.yoa=="" || StudentData.yop=="" || StudentData.dob=="" || StudentData.schoolNameSSc=="" || StudentData.schoolBoarSSc=="" || StudentData.schoolpercentageSSc=="" || StudentData.schoolYopSSc==""
-            || StudentData.schoolNameHSSc=="" || StudentData.schoolBoarHSSc=="" || StudentData.schoolpercentageHSSc=="" || StudentData.schoolYopHSSc=="" || StudentData.mobile=="" || StudentData.alternatemobile=="" || StudentData.email=="" || StudentData.aggregateUgCgpa==""  || StudentData.semester1sgpa=="" || StudentData.semester1Atkt==""
+            || StudentData.schoolNameHSSc=="" || StudentData.schoolBoarHSSc=="" || StudentData.schoolpercentageHSSc=="" || StudentData.schoolYopHSSc=="" || StudentData.mobile=="" || StudentData.alternatemobile=="" || StudentData.email==""
             || StudentData.localAdd=="" || StudentData.pincodeLocal=="" || StudentData.permanentAdd==""  || StudentData.permanentHome==""  || StudentData.permanentState==""  || StudentData.permanentPincode==""  || StudentData.fatherName==""  || StudentData.fatherContect==""
             || StudentData.fatherOccupation==""   || StudentData.motherName==""  || StudentData.motherContect==""){
             Toast.makeText(this, "Please Fill All Required Fields * ", Toast.LENGTH_SHORT).show()
@@ -1238,6 +971,14 @@ class UpdateProfileActivity : AppCompatActivity() {
                 return
             }
         }
+
+        if(StudentData.currentsem.toInt()>7){
+            StudentData.aggregateUgCgpa = ((StudentData.semester1sgpa.toFloat()+StudentData.semester2sgpa.toFloat()+StudentData.semester3sgpa.toFloat()+StudentData.semester4sgpa.toFloat()+StudentData.semester5sgpa.toFloat()+StudentData.semester6sgpa.toFloat())/6).toString()
+            StudentData.aggregateUgPercentage = (StudentData.aggregateUgCgpa.toFloat()*10).toString()
+            StudentData.ugCourse = "IMCA"
+            StudentData.ugCourse = "Computer Application"
+        }
+
         sendDataToServer()
     }
 
@@ -1253,7 +994,13 @@ class UpdateProfileActivity : AppCompatActivity() {
             sendImagetoStorage()
         }else{
             mDbRef.child("Users").child(Username.substring(0,Username.indexOf('.')).lowercase()).child("mobileNumber").setValue(findViewById<TextView>(R.id.MobileNumber).text.toString())
-            sendDataToExcel();
+
+            if(dataexist) {
+                sendDataToExcel("update")
+            }else{
+                sendDataToExcel("create")
+            }
+
             val intent= Intent(this,UserProfileActivity::class.java)
             intent.putExtra("UserName",Username)
             startActivity(intent)
@@ -1308,6 +1055,13 @@ class UpdateProfileActivity : AppCompatActivity() {
         mDbRef.child("StudentData").child(path).child("imageUrl").setValue(ImgUrl)
         mDbRef.child("Users").child(path).child("imageUrl").setValue(ImgUrl)
         mDbRef.child("Users").child(path).child("mobileNumber").setValue(findViewById<TextView>(R.id.MobileNumber).text.toString())
+        StudentData.imageUrl = ImgUrl
+        if(dataexist) {
+            sendDataToExcel("update")
+        }else{
+            sendDataToExcel("create")
+        }
+
         val intent= Intent(this,UserProfileActivity::class.java)
         intent.putExtra("UserName",Username)
         startActivity(intent)
@@ -1387,17 +1141,19 @@ class UpdateProfileActivity : AppCompatActivity() {
         sem8Atkttxt.isVisible=!Mca
     }
 
-    private fun sendDataToExcel() {
+    private fun sendDataToExcel(action : String) {
         val data= StudentData
        val queue : RequestQueue = Volley.newRequestQueue(this)
                var url="https://script.google.com/macros/s/AKfycbxBmSvWjtiXzeBxfuVtnmu-SwnxXP85foqjYKO4EAEx_lgT7F_V3-PZQ_jXZ5IR1kGq/exec?"
-               url=url+"action=update&placment="+data.placment+"&fullname="+data.name+"&enroll="+data.enrollNo+"&university=RGPV&course="+data.course+"&yoa="+data.yoa+"&yop="+data.yop+"&dob="+data.dob+"&gender="+data.gender+"&category="+data.category+"&abled="+data.speciallyAbled+"&ssc="+data.schoolpercentageSSc+"&hssc="+data.schoolpercentageHSSc+"&diplomapercentage="+data.diplomaPercentage+"&ugcgpa="+data.aggregateUgCgpa+"&ugpercentage="+data.aggregateUgPercentage+"&pgcgpa="+data.aggregatePgCgpa+"&pgpercentage="+data.aggregatePgPercentage+"&ugcourse="+data.ugCourse+"&ugspecialization="+data.ugSpecialization+"&ugyop="+data.ugyop+"&backlog="+data.activeBacklog+"&backlognumber="+data.numberOfBacklog+"&backloghistory="+data.backlogHistory+"&diploma="+data.diploma+"&diplomayop="+data.diplomayop+"&diplomayoa="+data.diplomayoa+"&diplomainstitute="+data.diplomaInstitute+"&mobile="+data.mobile+"&alternetmobile="+data.alternatemobile+"&email="+data.email+"&sscname="+data.schoolNameSSc+"&sscboard="+data.schoolBoarSSc+"&sscyop="+data.schoolYopSSc+"&hsscname="+data.schoolNameHSSc+"&hsscboard="+data.schoolBoarHSSc+"&hsscyop="+data.schoolYopHSSc+"&gap="+data.gap+"&gapnumber="+data.gapyear+"&sem1sgpa="+data.semester1sgpa+"&sem1atkt="+data.semester1Atkt+"&sem2sgpa="+data.semester2sgpa+"&sem2atkt="+data.semester2Atkt+"&sem3sgpa="+data.semester3sgpa+"&sem3atkt="+data.semester3Atkt+"&sem4sgpa="+data.semester4sgpa+"&sem4atkt="+data.semester4Atkt+"&sem5sgpa="+data.semester5sgpa+"&sem5atkt="+data.semester5Atkt+"&sem6sgpa="+data.semester6sgpa+"&sem6atkt="+data.semester6Atkt+"&sem7sgpa="+data.semester7sgpa+"&sem7atkt="+data.semester7Atkt+"&sem8sgpa="+data.semester8sgpa+"&sem8atkt="+data.semester8Atkt+"&localadd="+data.localAdd+"&localpin="+data.pincodeLocal+"&permanentadd="+data.permanentAdd+"&permanenthometown="+data.permanentHome+"&permanentstate="+data.permanentState+"&permanentpin="+data.permanentPincode+"&fathername="+data.fatherName+"&fathercontect="+data.fatherContect+"&fatheroccupation="+data.fatherOccupation+"&mothername="+data.motherName+"&mothercontect="+data.motherContect+"&internship="+data.internship+"&imgurl="+data.imageUrl+"&declaration=Yes"
+               url=url+"action="+action+"&placment="+data.placment+"&fullname="+data.name+"&enroll="+data.enrollNo+"&university=RGPV&course="+data.course+"&yoa="+data.yoa+"&yop="+data.yop+"&dob="+data.dob+"&gender="+data.gender+"&category="+data.category+"&abled="+data.speciallyAbled+"&ssc="+data.schoolpercentageSSc+"&hssc="+data.schoolpercentageHSSc+"&diplomapercentage="+data.diplomaPercentage+"&ugcgpa="+data.aggregateUgCgpa+"&ugpercentage="+data.aggregateUgPercentage+"&pgcgpa="+data.aggregatePgCgpa+"&pgpercentage="+data.aggregatePgPercentage+"&ugcourse="+data.ugCourse+"&ugspecialization="+data.ugSpecialization+"&ugyop="+data.ugyop+"&backlog="+data.activeBacklog+"&backlognumber="+data.numberOfBacklog+"&backloghistory="+data.backlogHistory+"&diploma="+data.diploma+"&diplomayop="+data.diplomayop+"&diplomayoa="+data.diplomayoa+"&diplomainstitute="+data.diplomaInstitute+"&mobile="+data.mobile+"&alternetmobile="+data.alternatemobile+"&email="+data.email+"&sscname="+data.schoolNameSSc+"&sscboard="+data.schoolBoarSSc+"&sscyop="+data.schoolYopSSc+"&hsscname="+data.schoolNameHSSc+"&hsscboard="+data.schoolBoarHSSc+"&hsscyop="+data.schoolYopHSSc+"&gap="+data.gap+"&gapnumber="+data.gapyear+"&sem1sgpa="+data.semester1sgpa+"&sem1atkt="+data.semester1Atkt+"&sem2sgpa="+data.semester2sgpa+"&sem2atkt="+data.semester2Atkt+"&sem3sgpa="+data.semester3sgpa+"&sem3atkt="+data.semester3Atkt+"&sem4sgpa="+data.semester4sgpa+"&sem4atkt="+data.semester4Atkt+"&sem5sgpa="+data.semester5sgpa+"&sem5atkt="+data.semester5Atkt+"&sem6sgpa="+data.semester6sgpa+"&sem6atkt="+data.semester6Atkt+"&sem7sgpa="+data.semester7sgpa+"&sem7atkt="+data.semester7Atkt+"&sem8sgpa="+data.semester8sgpa+"&sem8atkt="+data.semester8Atkt+"&localadd="+data.localAdd+"&localpin="+data.pincodeLocal+"&permanentadd="+data.permanentAdd+"&permanenthometown="+data.permanentHome+"&permanentstate="+data.permanentState+"&permanentpin="+data.permanentPincode+"&fathername="+data.fatherName+"&fathercontect="+data.fatherContect+"&fatheroccupation="+data.fatherOccupation+"&mothername="+data.motherName+"&mothercontect="+data.motherContect+"&internship="+data.internship+"&imgurl="+data.imageUrl+"&declaration=Yes"
                val stringrequest = StringRequest(
                    Request.Method.GET, url , Response.Listener<String> { response ->
                    // Display the first 500 characters of the response string.
                    Toast.makeText(this, response.substring(0, 500), Toast.LENGTH_SHORT).show()
                },
-                   Response.ErrorListener { Toast.makeText(this,"failed to update", Toast.LENGTH_SHORT).show()})
+                   Response.ErrorListener {
+                       //Toast.makeText(this,"failed to update", Toast.LENGTH_SHORT).show()
+                       })
 
                queue.add(stringrequest)
     }

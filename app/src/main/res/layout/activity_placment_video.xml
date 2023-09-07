@@ -27,30 +27,24 @@
         app:layout_constraintStart_toStartOf="@id/ActionBar"
         app:layout_constraintTop_toTopOf="@id/ActionBar"
         app:layout_constraintBottom_toBottomOf="@id/ActionBar"
-        android:layout_margin="5dp"
-        android:visibility="gone"/>
-
-
-    <ImageView
-        android:id="@+id/LoginIcon"
-        android:layout_width="75dp"
-        android:layout_height="0dp"
-        android:src="@drawable/login_icon_24"
-        app:layout_constraintStart_toStartOf="@id/ActionBar"
-        app:layout_constraintTop_toTopOf="@id/ActionBar"
-        app:layout_constraintBottom_toBottomOf="@id/ActionBar"
         android:layout_margin="5dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Placements Video"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintTop_toTopOf="@+id/ActionBar"
+
+    <EditText
+        android:id="@+id/SearchBox"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/border"
+        android:backgroundTint="@color/white"
+        android:hint="Search Video"
+        android:textColorHint="#7f000000"
+        android:textColor="@color/black"
+        android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/ActionBar"
-        app:layout_constraintEnd_toEndOf="@+id/ActionBar"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/HomeIcon"
+        app:layout_constraintStart_toEndOf="@id/UserProfile"
+        app:layout_constraintTop_toTopOf="@+id/ActionBar" />
 
 
     <ImageView
@@ -74,6 +68,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ActionBar" />
+
+    <ImageView
+        android:id="@+id/NoResult"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/no_result_found"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/Add_New_Video_Btn"

@@ -4,5 +4,6 @@ class Video (
     val title:String ="",
     val duration:String="",
     var image:String="",
-    var url:String=""
+    var url:String="",
+    val category: String=""
 )

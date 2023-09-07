@@ -70,11 +70,7 @@ class StudentsActivity : AppCompatActivity(), StudentDetailes {
         }
 
         findViewById<Button>(R.id.DownloadExelebtn).setOnClickListener {
-            var stdname="pritesh";
-            var stdclass="MCA";
-            var stdRoll=20;
             openExcelSheet("https://docs.google.com/spreadsheets/d/13f7KqzepWFNmnb0CPvM1OJbBovBANiAtqbf05TwBO30/edit#gid=0");
-            //senddata();
         }
 
         HomeIcon.setOnClickListener {
@@ -189,23 +185,6 @@ class StudentsActivity : AppCompatActivity(), StudentDetailes {
         val uri : Uri = Uri.parse(url)
         startActivity(Intent(Intent.ACTION_VIEW,uri))
     }
-
-    /*private fun senddata() {
-        val queue :  RequestQueue = Volley.newRequestQueue(this)
-                var url="https://script.google.com/macros/s/AKfycbxBmSvWjtiXzeBxfuVtnmu-SwnxXP85foqjYKO4EAEx_lgT7F_V3-PZQ_jXZ5IR1kGq/exec?"
-                url=url+"action=create&placment="+data.placment+"&fullname="+data.name+"&enroll="+data.enrollNo+"&university=RGPV&course="+data.course+"&yoa="+data.yoa+"&yop="+data.yop+"&dob="+data.dob+"&gender="+data.gender+"&category="+data.category+"&abled="+data.speciallyAbled+"&ssc="+data.schoolpercentageSSc+"&hssc="+data.schoolpercentageHSSc+"&diplomapercentage="+data.diplomaPercentage+"&ugcgpa="+data.aggregateUgCgpa+"&ugpercentage="+data.aggregateUgPercentage+"&pgcgpa="+data.aggregatePgCgpa+"&pgpercentage="+data.aggregatePgPercentage+"&ugcourse="+data.ugCourse+"&ugspecialization="+data.ugSpecialization+"&ugyop="+data.ugyop+"&backlog="+data.activeBacklog+"&backlognumber="+data.numberOfBacklog+"&backloghistory="+data.backlogHistory+"&diploma="+data.diploma+"&diplomayop="+data.diplomayop+"&diplomayoa="+data.diplomayoa+"&diplomainstitute="+data.diplomaInstitute+"&mobile="+data.mobile+"&alternetmobile="+data.alternatemobile+"&email="+data.email+"&sscname="+data.schoolNameSSc+"&sscboard="+data.schoolBoarSSc+"&sscyop="+data.schoolYopSSc+"&hsscname="+data.schoolNameHSSc+"&hsscboard="+data.schoolBoarHSSc+"&hsscyop="+data.schoolYopHSSc+"&gap="+data.gap+"&gapnumber="+data.gapyear+"&sem1sgpa="+data.semester1sgpa+"&sem1atkt="+data.semester1Atkt+"&sem2sgpa="+data.semester2sgpa+"&sem2atkt="+data.semester2Atkt+"&sem3sgpa="+data.semester3sgpa+"&sem3atkt="+data.semester3Atkt+"&sem4sgpa="+data.semester4sgpa+"&sem4atkt="+data.semester4Atkt+"&sem5sgpa="+data.semester5sgpa+"&sem5atkt="+data.semester5Atkt+"&sem6sgpa="+data.semester6sgpa+"&sem6atkt="+data.semester6Atkt+"&sem7sgpa="+data.semester7sgpa+"&sem7atkt="+data.semester7Atkt+"&sem8sgpa="+data.semester8sgpa+"&sem8atkt="+data.semester8Atkt+"&localadd="+data.localAdd+"&localpin="+data.pincodeLocal+"&permanentadd="+data.permanentAdd+"&permanenthometown="+data.permanentHome+"&permanentstate="+data.permanentState+"&permanentpin="+data.permanentPincode+"&fathername="+data.fatherName+"&fathercontect="+data.fatherContect+"&fatheroccupation="+data.fatherOccupation+"&mothername="+data.motherName+"&mothercontect="+data.motherContect+"&internship="+data.internship+"&imgurl="+data.imageUrl+"&declaration=Yes";
-                val stringrequest = StringRequest(com.android.volley.Request.Method.GET, url ,Response.Listener<String> { response ->
-                    // Display the first 500 characters of the response string.
-                    Toast.makeText(this, response.substring(0, 500), Toast.LENGTH_SHORT).show()
-                },
-                    Response.ErrorListener { Toast.makeText(this,"failed to update", Toast.LENGTH_SHORT).show()})
-
-                queue.add(stringrequest)
-        }
-
-        //Toast.makeText(this, url, Toast.LENGTH_SHORT).show()
-
-    }*/
 
 
 
